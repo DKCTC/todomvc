@@ -19,7 +19,7 @@ export function Main({ todos, dispatch }) {
 
                 return todo;
             }),
-        [todos, route]
+        [todos]
     );
 
     const toggleAll = useCallback((e) => dispatch({ type: TOGGLE_ALL, payload: { completed: e.target.checked } }), [dispatch]);
@@ -41,7 +41,9 @@ export function Main({ todos, dispatch }) {
             </div>
             <ul className="todo-list" data-testid="todo-list">
                 {visibleTodos.map((todo) => (
-                    <Item todo={todo} key={todo.id} dispatch={dispatch} />
+                    <div key={Math.random()}>
+                        <Item todo={todo} dispatch={dispatch} />
+                    </div>
                 ))}
             </ul>
         </main>
