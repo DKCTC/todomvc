@@ -27,7 +27,7 @@ export function Footer({ todos, dispatch }) {
                 </li>
             </ul>
             <button
-                className="clear-completed-bin"
+                className="clear-completed"
                 hidden={completedCount === 0}
                 onClick={removeCompleted}
             >
